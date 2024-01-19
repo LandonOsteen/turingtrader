@@ -14,11 +14,13 @@ import {
 import DarkMode from './dark-mode';
 import { User, BarChartHorizontal } from 'lucide-react';
 import { Button } from './ui/button';
+import { Separator } from './ui/separator';
 import { Component1Icon } from '@radix-ui/react-icons';
 
-export default function NavBar() {
+export default function Footer() {
   return (
     <div className="sticky z-50 border-b-2 border-opacity-50">
+      <Separator />
       <div className="flex flex-row items-center justify-center py-2">
         <NavigationMenu>
           <h1 className="flex align-middle text-xl font-semibold px-10">
@@ -37,15 +39,23 @@ export default function NavBar() {
             </NavigationMenuLink>
           </Link>
 
-          <Button variant="ghost" className="text-xs p-2 m-1">
-            Register
-          </Button>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Login
+            </NavigationMenuLink>
+          </Link>
 
-          <Button variant="outline" className="text-xs p-2 m-1">
-            Login
-          </Button>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Register
+            </NavigationMenuLink>
+          </Link>
 
-          <DarkMode />
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Help
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenu>
       </div>
     </div>
